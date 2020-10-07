@@ -1,27 +1,41 @@
-import {Route, Switch} from "react-router";
-import UserView from "../view/user";
-import HorseView from "../view/horse";
-import HorseListView from "../view/horseList";
-import React from "react";
+import {Route, Switch} from 'react-router';
+import UserView from '../view/user';
+import HorseView from '../view/horse';
+import HorseListView from '../view/horseList';
+import React from 'react';
 import {
     BrowserRouter as Router,
 } from 'react-router-dom';
 
-import Button from 'react-bootstrap/Button';
-import NavbarView from "../view/navbar";
+import NavbarView from '../view/navbar';
+import UserList from '../view/userList';
+import CreateHorseView from '../view/createHorse';
+import CreateUserView from '../view/createUser';
 
 export const ROUTES = [
     {
-        path: "/horse",
+        path: '/horse',
         component: HorseView
     },
     {
-        path: "/horses",
+        path: '/horses',
         component: HorseListView
     },
     {
-        path: "/user",
+        path: '/users',
+        component: UserList
+    },
+    {
+        path: '/user',
         component: UserView
+    },
+    {
+        path: '/create/horse',
+        component: CreateHorseView
+    },
+    {
+        path: '/create/user',
+        component: CreateUserView
     },
 ];
 
@@ -30,12 +44,13 @@ export default function App() {
         <Router>
             <div>
                 <NavbarView/>
-                {/*<Button variant="primary">Primary</Button>{' '}*/}
-                <Switch>
-                    {ROUTES.map((route, i) => (
-                        <RouteWithSubRoutes key={i} {...route} />
-                    ))}
-                </Switch>
+                <div className={'main-content'}>
+                    <Switch>
+                        {ROUTES.map((route, i) => (
+                            <RouteWithSubRoutes key={i} {...route} />
+                        ))}
+                    </Switch>
+                </div>
             </div>
         </Router>
     );

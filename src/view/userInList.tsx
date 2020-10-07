@@ -8,27 +8,28 @@ import {
 interface props {
     country: string,
     image: string,
-    lear: string,
-    moniker: string,
-    passport: string,
+    name: string,
+    login: string,
+    sex?: string,
+    birth?: string,
 }
 
-export default class HorseInList extends React.Component<props, any> {
+export default class UserInList extends React.Component<props, any> {
     render() {
-        const {country, image, lear, moniker, passport} = this.props;
+        const {country, image, name, login} = this.props;
 
         const opt = {};
-        opt['to'] = `/horse?passport=${passport}`;
+        opt['to'] = `/user?login=${login}`;
 
         return <Card className="m-3 item-in-list">
-            <Card.Header> {moniker}</Card.Header>
+            <Card.Header> {login}</Card.Header>
             <Card.Body>
-                <Card.Img variant="top" src={image}/>
-                <Card.Text> Lear: {lear} </Card.Text>
+                <Card.Img className={'user-avatar'} variant="top" src={image}/>
+                <Card.Text> Name: {name} </Card.Text>
                 <Card.Text> Country: {country} </Card.Text>
 
                 <Button style={{padding: '0'}}
-                    variant="primary">
+                        variant="primary">
                     <Link {...opt} className="text-decoration-none text-reset pl-4 pr-4"> Details </Link>
                 </Button>
 

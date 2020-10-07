@@ -1,42 +1,74 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Api from '../lib/api';
 import HorseInList from './horseInList';
+import {errorToast} from '../lib/errorToast'
 
 export default class HorseListView extends React.Component {
     state: {
-        horses: Array<any>
+        horses: Array<any>,
+        error: boolean,
+        start: number,
+        end: number,
+        fetched: boolean,
     }
 
     constructor(props: Readonly<any>) {
         super(props);
         this.state = {
             horses: [],
+            error: false,
+            start: 1,
+            end: 20,
+            fetched: false,
         }
     }
 
     getHorses() {
-        Api.getUserHorses('dimochka')
+        Api.getHorses(this.state.start, this.state.end)
             .then((response) => {
                 // @ts-ignore
                 return response.json();
-            }).then((horses) => {
-            // @ts-ignore
-            const horseItems = horses.map((horse, index) =>
-                <HorseInList key={index} country={horse.country} image={horse.image}
-                             lear={horse.lear} moniker={horse.moniker}/>
-            );
-            this.setState((state) => {
-                return {horses: horseItems};
+            })
+            .then((horses) => {
+                this.setState((state) => {
+                    return {horses: horses, error: false, fetched: true};
+                });
+            })
+            .catch((error) => {
+                this.setState((state) => {
+                    return {error: true};
+                });
+                console.error(error);
             });
-        })
+    }
+
+    generateTemplate(horse) {
+        return <HorseInList key={horse.passport} country={horse.country} image={horse.image}
+                            lear={horse.lear} moniker={horse.moniker} passport={horse.passport}/>
     }
 
     render() {
-        if (this.state.horses.length === 0) {
+        const {error, horses, fetched} = this.state;
+        if (error) {
+            return errorToast();
+        }
+
+        if (!fetched) {
             this.getHorses();
         }
-        return <div>
-            {this.state.horses}
+
+        if (fetched && horses.length === 0) {
+            return <div className={'list-container'}>
+                No horses found
+            </div>;
+        }
+
+        const horseTemplates = horses.map((horse) => {
+            return this.generateTemplate(horse);
+        })
+
+        return <div className={'list-container'}>
+            {horseTemplates}
         </div>;
     }
 }

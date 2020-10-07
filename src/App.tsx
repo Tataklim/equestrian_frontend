@@ -43,12 +43,6 @@ export default function App () {
                 </ul>
 
                 <Switch>
-                    <Route path="/user">
-                        <UserView />
-                    </Route>
-                    {/*<Route path="/horse">*/}
-                    {/*    <HorseView id={query.get('id')}/>*/}
-                    {/*</Route>*/}
                     <Route path="/">
                         <Home />
                     </Route>

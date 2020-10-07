@@ -15,3 +15,53 @@ code {
 .navbar {
   background-color: #fce4ec;
 }
+
+.main-content {
+  margin-left: 64px;
+  margin-right: 64px;
+  margin-top: 16px;
+}
+
+.toast-position {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+}
+
+.container {
+  display: inline-block;
+  height: 100%;
+}
+
+.item-in-list {
+  width: 300px;
+  display: inline-block;
+}
+
+.horse-item {
+  width: 500px;
+  position: absolute;
+  left: 30%;
+}
+
+.block-title {
+  width: 500px;
+  left: 40%;
+  border: 0;
+  font-size: 26px;
+}
+
+.birth-input {
+  display: block;
+  color: #495057;
+  border: 1px solid #ced4da;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  height: 47px;
+  border-radius: .25rem;
+  padding: .375rem .75rem;
+}
+
+.user-avatar {
+  height: 225px;
+  object-fit: cover;
+}

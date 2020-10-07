@@ -4,7 +4,6 @@ import Col from "react-bootstrap/cjs/Col";
 import {
     Link
 } from 'react-router-dom';
-import Api from "../lib/api";
 
 export default class NavbarView extends React.Component<any, object> {
     render() {
@@ -17,7 +16,13 @@ export default class NavbarView extends React.Component<any, object> {
                 <Link to="/horses" className="text-decoration-none text-reset">Horses</Link>
             </Col>
             <Col xs lg="2">
-                <Link to="/user" className="text-decoration-none text-reset">User</Link>
+                <Link to="/users" className="text-decoration-none text-reset">Users</Link>
+            </Col>
+            <Col xs lg="2">
+                <Link to="/create/horse" className="text-decoration-none text-reset">Create horse</Link>
+            </Col>
+            <Col xs lg="2">
+                <Link to="/create/user" className="text-decoration-none text-reset">Create user</Link>
             </Col>
         </Row>;
     }
