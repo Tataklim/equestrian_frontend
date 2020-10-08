@@ -5,8 +5,8 @@ import {Button} from "react-bootstrap";
 import {errorToast} from "../lib/errorToast";
 import Api from "../lib/api";
 
-const MALE_IMAGE = 'https://img-fotki.yandex.ru/get/5100/299944781.1e/0_1237e2_e5f8a300_orig.jpg';
-const FEMALE_IMAGE = 'https://zooclub.ru/attach/38000/38016.jpg';
+const MALE_IMAGE = 'https://st3.depositphotos.com/11148122/13719/v/1600/depositphotos_137194396-stock-illustration-vector-illustration-of-horse-black.jpg';
+const FEMALE_IMAGE = 'https://thumbs.dreamstime.com/b/%D1%81%D0%BA%D0%B0%D1%87%D0%B0-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0-%D0%BB%D0%BE%D1%88%D0%B0%D0%B4%D0%B8-%D1%87%D0%B5%D1%80%D0%BD%D0%BE-%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9-100734383.jpg';
 const PASSPORT_IMAGE = 'https://kareta-petergof.ru/wp-content/uploads/2015/02/vMpNth74HA.jpg';
 
 export default class CreateHorseView extends React.Component<any, any> {

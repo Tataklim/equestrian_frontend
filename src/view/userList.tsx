@@ -43,7 +43,7 @@ export default class UserListView extends React.Component {
     }
 
     generateTemplate(users) {
-        return <UserInList key={users.login} country={users.country} login={users.login} image={users.image}
+        return <UserInList key={users.login + Math.random()} country={users.country} login={users.login} image={users.image}
                             name={users.name} sex={users.sex}/>
     }
 

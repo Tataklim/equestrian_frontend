@@ -13,7 +13,8 @@ code {
 }
 
 .navbar {
-  background-color: #fce4ec;
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
 .main-content {
@@ -23,7 +24,7 @@ code {
 }
 
 .toast-position {
-  position: absolute;
+  position: fixed;
   right: 32px;
   bottom: 32px;
 }
@@ -63,5 +64,34 @@ code {
 
 .user-avatar {
   height: 225px;
+  object-fit: cover;
+}
+
+.horse-avatar {
+  height: 235px;
+  object-fit: cover;
+}
+
+.horse-avatar-big {
+  height: 430px;
+  object-fit: cover;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.no-border {
+  border: 0;
+}
+
+.competition-item {
+  width: 790px;
+  position: absolute;
+  left: 20%;
+}
+
+.competition-avatar {
+  height: 245px;
   object-fit: cover;
 }

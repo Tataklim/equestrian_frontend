@@ -7,10 +7,9 @@ import {
 
 export default class NavbarView extends React.Component<any, object> {
     render() {
-        // Api.signUp('lolkeek123', 'fs', 'fsdfsd', true, '2018.02.18', '/lolkek.okfd');
-        return <Row className="justify-content-md-center p-2 navbar">
+        return <Row className="justify-content-md-center p-2 ml-2 navbar">
             <Col xs lg="2">
-                <Link to="/" className="text-decoration-none text-reset">Home</Link>
+                <Link to="/competitions" className="text-decoration-none text-reset">Competitions</Link>
             </Col>
             <Col xs lg="2">
                 <Link to="/horses" className="text-decoration-none text-reset">Horses</Link>
@@ -23,6 +22,9 @@ export default class NavbarView extends React.Component<any, object> {
             </Col>
             <Col xs lg="2">
                 <Link to="/create/user" className="text-decoration-none text-reset">Create user</Link>
+            </Col>
+            <Col xs lg="2">
+                <Link to="/create/competition" className="text-decoration-none text-reset">Create competition</Link>
             </Col>
         </Row>;
     }

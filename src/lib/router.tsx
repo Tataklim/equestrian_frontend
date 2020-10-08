@@ -11,6 +11,9 @@ import NavbarView from '../view/navbar';
 import UserList from '../view/userList';
 import CreateHorseView from '../view/createHorse';
 import CreateUserView from '../view/createUser';
+import CreateCompetitionView from "../view/createCompetition";
+import CompetitionView from "../view/competition";
+import CompetitionListView from "../view/competitionList";
 
 export const ROUTES = [
     {
@@ -36,6 +39,18 @@ export const ROUTES = [
     {
         path: '/create/user',
         component: CreateUserView
+    },
+    {
+        path: '/create/competition',
+        component: CreateCompetitionView
+    },
+    {
+        path: '/competition',
+        component: CompetitionView
+    },
+    {
+        path: '/competitions',
+        component: CompetitionListView
     },
 ];
 

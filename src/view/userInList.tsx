@@ -12,11 +12,13 @@ interface props {
     login: string,
     sex?: string,
     birth?: string,
+    startOwning?: string,
+    endOwning?: string
 }
 
 export default class UserInList extends React.Component<props, any> {
     render() {
-        const {country, image, name, login} = this.props;
+        const {country, image, name, login, startOwning, endOwning} = this.props;
 
         const opt = {};
         opt['to'] = `/user?login=${login}`;
@@ -27,6 +29,13 @@ export default class UserInList extends React.Component<props, any> {
                 <Card.Img className={'user-avatar'} variant="top" src={image}/>
                 <Card.Text> Name: {name} </Card.Text>
                 <Card.Text> Country: {country} </Card.Text>
+                {startOwning && (
+                    <Card.Text> Start owning: {startOwning} </Card.Text>
+                )}
+
+                {endOwning && (
+                    <Card.Text> End owning: {endOwning} </Card.Text>
+                )}
 
                 <Button style={{padding: '0'}}
                         variant="primary">
